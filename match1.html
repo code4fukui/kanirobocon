@@ -264,8 +264,8 @@ var showMatch1 = function() {
 	
 	
 	for (var i = 1; i <= 3; i++) {
-		var sb = "<h2>予選コース" + "ABC".charAt(i - 1) + "</h2><table>";
-		sb += "<tr><th>試合</th><th>部</th><th>チーム名A</th><th>チーム名B</th></tr>";
+		var sb = "<h2>予選 " + "ABC".charAt(i - 1) + "ステージ</h2><table>";
+		sb += "<tr><th>試合</th><th>部</th><th>左コース</th><th>右コース</th></tr>";
 		for (var k = 1; k < match1.length; k++) {
 			var d = match1[k];
 			if (d[4] != i)

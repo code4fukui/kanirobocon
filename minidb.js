@@ -1,6 +1,6 @@
 var MiniDB = {
-	endpoint: "http://172.20.10.4:8888/minidb/kanirobo2020/",
-//	endpoint: "http://localhost:8888/minidb/kanirobo2020/",
+	//endpoint: "http://172.20.10.4:8888/minidb/kanirobo2020/",
+	endpoint: "http://localhost:8888/minidb/kanirobo2020/",
 //	endpoint: "https://sabae.cc/minidb/kanirobo2019/",
 //	endpoint: "http://sabae.cc/minidb/kanirobo2018/",
 	load: function(name, callback) {
