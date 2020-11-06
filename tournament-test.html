@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>越前がにロボコン 決勝トーナメント</title>
+<meta property="og:image" content="kanirobocon-icon.png">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+<script src="minidb.js"></script>
+<script src="match.js"></script>
+<script type="module">
+import { drawTournament } from "./drawTournament.js";
+
+window.onload = () => {
+	const finalist = MiniDB.parseCSV(`id,entryid,name
+1,1,かにチーム1
+2,2,かにチーム2
+3,3,かにチーム3
+4,4,かにチーム4
+5,5,かにチーム5
+6,6,かにチーム6
+7,7,かにチーム7
+8,8,かにチーム8
+`);
+/* // match.jsより
+			[ [ 2, 8, -1 ], [ 6, 4, -2 ], [ 3, 5, -3 ], [ 7, 1, -4 ], ], // ベスト4決定
+			[ [ -1, -2, -5 ], [ -3, -4, -6 ], ], // 準決勝
+			[ [ -5, -6, -7 ] ] // 決勝
+*/
+	const result = MiniDB.parseCSV(`match2id,category,entry1id,entry2id,score1,score2,time1,time2,flg1,flg2
+1,T,8,2,0,2,,,100000000000,000000000000
+5,T,2,8,0,1,,,000000000000,100000000000
+5,T,6,4,0,1,,,000000000000,100000000000
+5,T,4,6,0,1,,,000000000000,100000000000
+5,T,2,4,0,1,,,000000000000,100000000000
+5,T,4,2,0,1,,,000000000000,100000000000
+5,T,7,1,0,1,,,000000000000,100000000000
+5,T,1,7,0,1,,,000000000000,100000000000
+5,T,3,5,0,1,,,000000000000,100000000000
+5,T,5,3,0,1,,,000000000000,100000000000
+5,T,1,5,0,1,,,000000000000,100000000000
+5,T,5,1,0,1,,,000000000000,100000000000
+5,T,1,4,0,1,,,000000000000,100000000000
+5,T,4,1,0,1,,,000000000000,100000000000
+`);
+
+	const title = "越前がにロボコン決勝 エントリー部門";
+	drawTournament(canvas, title, finalist, match.m8, result);
+};
+
+</script>
+<style>
+body {
+	margin: 0px;
+	box-sizing: border-box; /* width include border */
+	-webkit-text-size-adjust: none; /* for iPhone */
+	background-color: black;
+}
+#canvas {
+	display: block;
+	width: 100%;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+</html>
