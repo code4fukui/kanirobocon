@@ -15,14 +15,29 @@
 <script>"use strict";
 
 var preflg = true;
+var goalpointflg = false;
 var matchno = "1";
 
 window.onload = function() {
 	var hash = document.location.hash;
-	if (hash.length > 1) {
+	if (hash.length <= 1) {
+		const entry = [];
+		const match = [];
+		const result = [
+			-1,
+			0,
+			0, 0,
+			0, 0,
+			"", "",
+			"00000000000", "00000000000"
+		];
+		goalpointflg = true;
+		init(entry, match, result);
+	} else {
 		var nn = hash.substring(1).split(',');
 		matchno = nn[0];
 		preflg = matchno == '1';
+		goalpointflg = !preflg;
 		
 		var match1id = nn[1];
 //		console.log(match1id);
@@ -146,7 +161,7 @@ var init2 = function(entry, match, result, resultbefore) {
 					if (j == 4) { // 地球帰還のみ2点 2020
 						pnt += 2;
 					} else if (j == 5) { //  || j == 9) {
-						if (!preflg)
+						if (goalpointflg)
 							pnt++;
 					} else {
 						pnt++;
@@ -267,8 +282,10 @@ var init2 = function(entry, match, result, resultbefore) {
 		var getMatch = function(s) {
 			if (s.startsWith("T")) {
 				s = "エントリー部門 " + s.substring(1);
-			} else {
+			} else if (s.startsWith("K")) {
 				s = "歩行部門 " + s.substring(1);
+			}　else {
+				s = "";
 			}
 			return s;
 		};
@@ -288,7 +305,7 @@ var init2 = function(entry, match, result, resultbefore) {
 					return s
 				}
 			}
-			return "-";
+			return "";
 		};
 		
 		t1.textContent = getTeam(result[2]);
@@ -325,6 +342,10 @@ var init2 = function(entry, match, result, resultbefore) {
 	showMatch(match, result);
 	
 	var saveAndQuit = function() {
+		if (result[0] < 0) {
+			window.location.href = "menu.html";
+			return;
+		}
 		// サーバーに保存
 //result
 //		match1id,category,entry1id,entry2id,score1,score2,time1,time2,flg1,flg2
