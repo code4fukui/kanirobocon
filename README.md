@@ -1,7 +1,7 @@
 # kanirobocon2020
 
 カニロボコン得点システム、クライアント側 for iPad / PC  
-サーバー側コードも近日オープンソース化予定  
+サーバー側コードを含むものを、福井県こどもプログラミング協議会アカウントで公開 → [https://github.com/fkpc/kanirobocon-system/](https://github.com/fkpc/kanirobocon-system/)
 
 ## 注意
 
