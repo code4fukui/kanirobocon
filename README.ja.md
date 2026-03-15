@@ -1,8 +1,11 @@
 # カニロボコン
 
-カニロボコン得点システム、クライアント側 for iPad / PC  
-サーバー側コードを含むものを、福井県こどもプログラミング協議会アカウントで公開 → [https://github.com/fkpc/kanirobocon-system/](https://github.com/fkpc/kanirobocon-system/)
+クライアントサイドの得点システム、iPad / PC向け。サーバーサイドのコードは、福井県こどもプログラミング協議会のリポジトリで公開されています。
 
 ## 注意
 
-古いiPadでも動くように、JSの新しい表記非対応に注意！（ESモジュール使用不可など）
+古いiPadでも動作するよう、JavaScriptの新しい表記に非対応です。(ES Modulesの使用は避けるなど)
+
+## ライセンス
+
+MIT License
