@@ -1,9 +1,8 @@
 # kanirobocon2020
 
-カニロボコン得点システム、クライアント側 for iPad / PC  
-サーバー側コードを含むものを、福井県こどもプログラミング協議会アカウントで公開 → [https://github.com/fkpc/kanirobocon-system/](https://github.com/fkpc/kanirobocon-system/)
+Client-side scoring system for the Kani Robot Competition, for iPad / PC  
+The server-side code is published in the Fukui Prefecture Children's Programming Council account → [https://github.com/fkpc/kanirobocon-system/](https://github.com/fkpc/kanirobocon-system/)
 
-## 注意
+## Note
 
-古いiPadでも動くように、JSの新しい表記非対応に注意！（ESモジュール使用不可など）
-
+Caution on the use of new JS notation, as it needs to work on old iPads! (No ES module usage, etc.)
